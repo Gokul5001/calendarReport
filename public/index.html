@@ -33,12 +33,12 @@
         const gridOptions = {
             columnDefs: [
                 { headerName: 'S No', field: 'sno', sortable: true, filter: true, resizable: true },
-                { headerName: 'User Message', field: 'userMessage', sortable: true, filter: true, resizable: true },
-                { headerName: 'Bot Message', field: 'botMessage', sortable: true, filter: true, resizable: true },
-                { headerName: 'Android ID', field: 'deviceId', sortable: true, filter: true, resizable: true },
-                { headerName: 'Date', field: 'date', sortable: true, filter: true, resizable: true },
-                { headerName: 'Platform', field: 'platform', sortable: true, filter: true, resizable: true },
-                { headerName: 'Device Information', field: 'deviceInfo', sortable: true, filter: true, resizable: true }
+                { headerName: 'User Message', field: 'userMessage', sortable: true, filter: true, resizable: true,editable: true },
+                { headerName: 'Bot Message', field: 'botMessage', sortable: true, filter: true, resizable: true,editable: true },
+                { headerName: 'Android ID', field: 'deviceId', sortable: true, filter: true, resizable: true,editable: true },
+                { headerName: 'Date', field: 'date', sortable: true, filter: true, resizable: true,editable: true },
+                { headerName: 'Platform', field: 'platform', sortable: true, filter: true, resizable: true,editable: true },
+                { headerName: 'Device Information', field: 'deviceInfo', sortable: true, filter: true, resizable: true,editable: true }
             ],
             rowData: [],
             pagination: true,
@@ -49,7 +49,7 @@
         new agGrid.Grid(gridDiv, gridOptions);
 
         try {
-            const response = await fetch('http://localhost:3036/chatbot_keywords');
+            const response = await fetch('http://localhost:3306/chatbot_keywords');
             const data = await response.json();
             gridOptions.api.setRowData(data);
         } catch (error) {

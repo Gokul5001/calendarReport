@@ -5,7 +5,7 @@ const path = require("path");
 const app = express();
 const cors = require('cors');
 
-const port = process.env.PORT || 3036;
+const port = process.env.PORT || 3306;
 
 // Load environment variables
 dotenv.config();
@@ -54,7 +54,7 @@ app.get("/chatbot_keywords", (req, res) => {
     });
 });
 
-// // Start the server
+// Start the server
 // app.listen(port, () => {
 //     console.log(`Server running at http://192.168.58.103:${port}`);
 // });
